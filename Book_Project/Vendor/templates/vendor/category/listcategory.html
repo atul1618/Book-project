@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center">Category list</h3>
+        </div>
+        <div class="col">
+            <a  href="{%url 'createcategory' %}" class="btn btn-link"><b>Create Category</b></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table" border="3">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Category</th>
+                        <th>Action 1</th>
+                        <th>Action 2</th>
+                        <th>Action 3</th>
+                    </tr>
+                </thead>
+                {% for view in viewcategory %}
+                <thead class="thead-light">
+                    <tr>
+                        <th>{{view.id}}</th>
+                        <th>{{view.category_name}}</th>
+                        <th><a href="{%url 'viewcategory' view.id %}" class="btn btn-primary">View</a></th>
+                        <th><a href="{% url 'update_category' view.id %}" class="btn btn-warning">Edit</a></th>
+                        <th><a href="{%url 'del_category' view.id %}" class="btn btn-danger">Delete</a></th>
+                    </tr>
+                </thead>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

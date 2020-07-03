@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center"><b><i>Book Details</i></b></h3>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table" border="3">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Book name</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Pages</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <thead>
+                <tr>
+                    <th>{{book.book_name}}</th>
+                    <th>{{book.author}}</th>
+                    <th>{{book.category}}</th>
+                    <th>{{book.pages}}</th>
+                    <th>{{book.price}}</th>
+                    <th>{{book.pub_date}}</th>
+                </tr>
+                </thead>
+
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

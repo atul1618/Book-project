@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center"><b>Author Update</b></h3>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form method="post">
+                {% csrf_token %}
+                <table>
+                    {% for field in authorupdate %}
+                    <tr>
+                        <td>{{field.label_tag}}</td>
+                        <td>{{field}}</td>
+                        <td>{{field.errors}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td id="updatetag"><input type="submit" class="btn btn-success" value="Update Author"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

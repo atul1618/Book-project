@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center"><i><b>Book List</b></i></h3>
+        </div>
+        <div class="col">
+             <a  href="{%url 'createbook' %}" class="btn btn-link"><b>Create Book</b></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+                <table class="table" border="3">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Book id</th>
+                        <th>Book name</th>
+                        <th>Category</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Action 1</th>
+                        <th>Action 2</th>
+                        <th>Action 3</th>
+                    </tr>
+                </thead>
+                 {% for book in item %}
+                <tr>
+                    <td>{{book.id}}</td>
+                    <td>{{book.book_name}}</td>
+                    <td>{{book.category}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.pages}}</td>
+                    <td>{{book.pub_date}}</td>
+                    <td>{{book.price}}</td>
+                    <td><a href="{%url 'bookview' book.id %}" class="btn btn-primary">View</a></td>
+                    <td><a href="{%url 'update_book' book.id %}" class="btn btn-warning">Edit</a></td>
+                    <td><a href="{%url 'del_book' book.id %}" class="btn btn-danger">Delete</a></td>
+                    <td><a href="{%url 'bookview' book.id %}" class="btn btn-primary">View</a></td>
+                    <td><a href="{%url 'update_book' book.id %}" class="btn btn-warning">Edit</a></td>
+                    <td><a href="{%url 'del_book' book.id %}" class="btn btn-danger">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col"></div>
+
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

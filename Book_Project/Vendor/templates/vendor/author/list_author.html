@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center"><i><b>Author List</b></i></h3>
+        </div>
+        <div class="col">
+             <a  href="{%url 'authorreg' %}" class="btn btn-link"><b>Create Author</b></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table" border="2">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Author name</th>
+                    <th>Action 1</th>
+                    <th>Action 2</th>
+                    <th>Action 3</th>
+                </tr>
+                </thead>
+                {% for author in listauthor %}
+                <thead class="thead-light">
+                <tr>
+                    <th>{{author.id}}</th>
+                    <th>{{author.author_name}}</th>
+                    <th><a href="{%url 'viewauthor' author.id %}" class="btn btn-primary">View</a></th>
+                    <th><a href="{%url 'update_author' author.id %}" class="btn btn-warning">Edit</a></th>
+                    <th><a href="{%url 'del_author' author.id %}" class="btn btn-danger">Delete</a></th>
+                </tr>
+                </thead>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+
+{% endblock %}

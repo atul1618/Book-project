@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table" border="3">
+                <thead class="thead-dark">
+                <tr>
+                    <th>Book name</th>
+                    <th>Category</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Pub Date</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <thead>
+                <tr>
+                    <th>{{bookview.book_name}}</th>
+                    <th>{{bookview.category}}</th>
+                    <th>{{bookview.author}}</th>
+                    <th>{{bookview.pages}}</th>
+                    <th>{{bookview.pub_date}}</th>
+                    <th>{{bookview.price}}</th>
+                </tr>
+                </thead>
+            </table>
+            <table>
+                <tr>
+                    <td id="purchase">
+                        <a href="" class="btn btn-warning">Purchase Now</a></th>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col"></div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

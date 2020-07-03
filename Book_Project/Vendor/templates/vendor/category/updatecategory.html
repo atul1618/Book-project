@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<style>
+    #one{
+    margin-left:150px;
+    margin-top:25px;
+    }
+</style>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <h3 align="center"><b><i>Update Category</i></b></h3>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form method="post">
+                {% csrf_token %}
+                <table>
+                    {% for field in category %}
+                    <tr>
+                        <td>{{field.label_tag}}</td>
+                        <td>{{field}}</td>
+                        <td>{{field.errors}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <table>
+                     <tr>
+                        <td>
+                            <input type="submit" class="btn btn-success" value="Update Category" id="one">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'vendor/base.html' %}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <table class="table" border="2">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{category.category_name}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col"></div>
+</div>
+
+
+{% endblock %}
